@@ -64,7 +64,8 @@ tup1[0]:  12  #access tuple by index
 		parrot('a million', 'bereft of life', 'jump')         # 3 positional arguments
 		parrot('a thousand', state='pushing up the daisies')  # 1 positional, 1 keyword
 		
-- Multiple arguments: def cheeseshop1(kind, *arguments):   call:  cheeseshop1("Limburger", "It's very runny, sir.","It's really very,   VERY runny, sir.")
+- Multiple arguments: def cheeseshop1(kind, *arguments):   call:  cheeseshop1("Limburger", 
+        "It's very runny, sir.", "It's really very,   VERY runny, sir.")
 
 - Mutiple dict as arguments '**': def cheeseshop2(kind, **keywords): print(kw, ":", keywords[kw])	; 
         call: cheeseshop2("Limburger", shopkeeper="Michael Palin",client="John Cleese",sketch="Cheese Shop Sketch")
