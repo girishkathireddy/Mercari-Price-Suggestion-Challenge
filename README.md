@@ -5,42 +5,57 @@
 * Tuples and Lists are ordered. Dictionaries are unordered. 
 ```
   - squares = [1, 4, 9, 16, 25] 
+  
   - squares.count(1)  #1 counts frequency   
+  
   - letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g'] 
+  
   - nest lists :x = [['a', 'b', 'c'], [2, 1, 3]] 
+  
   - csquares = squares  # Transfers pointers of squares to csquares. List access by index
+  
   - csquares = list(squares) # make a copy of squares. suqres and csquares are independent.
   ```
   
-  
-
 ## List Methods
 ```
-fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
-fruits.count('apple')
-fruits.index('banana')
-fruits.index('banana', 4)  # Find next banana starting a position 4
-fruits.reverse()
-fruits.append('grape')
-fruits.sort()
-sorted(fruits): will not affect fruits List order
-add one list to other using : '+', or using extend()
+- fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+
+- fruits.count('apple')
+
+- fruits.index('banana')
+
+- fruits.index('banana', 4)  # Find next banana starting a position 4
+
+- fruits.reverse()
+
+- fruits.append('grape')
+
+- fruits.sort()
+
+- sorted(fruits)  # will not affect fruits List order
+
+- add one list to other using : '+', or using extend()
 ```
 ## Tuple
 ```
 tup1= (12, 34, 56);
+
 tup1[0]:  12  #access tuple by index
 ```
 ## Functions
 ```
-* def lastc(s): return s[-1] # returns last character of string 
-* def lastc(s): return s[-1] myList=[(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]   sorted(myList,key=lastc)
- ref: https://developers.google.com/edu/python/sorting
-* def ask_ok(prompt, retries=4, reminder='Please try again!'):   can pass one argument,2 or all the argumnets: 
+- def lastc(s): return s[-1] # returns last character of string 
+
+- def lastc(s): return s[-1] myList=[(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]   sorted(myList,key=lastc)
+    * ref: https://developers.google.com/edu/python/sorting
+    
+- def ask_ok(prompt, retries=4, reminder='Please try again!'):   can pass one argument,2 or all the argumnets: 
     - ask_ok('OK to overwrite the file?', 2) or 
     - ask_ok('Do you really want to quit?') or 
     - ask_ok('OK to overwrite the file?', 2, 'Come on, only yes or no!')
-* Fctn: def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
+    
+- Fctn: def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
        ways to call: using positional and keywords. One value is mandatory above
 		parrot(1000)                                          # 1 positional argument
 		parrot(voltage=1000)                                  # 1 keyword argument
@@ -48,8 +63,10 @@ tup1[0]:  12  #access tuple by index
 		parrot(action='VOOOOOM', voltage=1000000)             # 2 keyword arguments
 		parrot('a million', 'bereft of life', 'jump')         # 3 positional arguments
 		parrot('a thousand', state='pushing up the daisies')  # 1 positional, 1 keyword
-* Multiple arguments: def cheeseshop1(kind, *arguments):   call:  cheeseshop1("Limburger", "It's very runny, sir.","It's really very,   VERY runny, sir.")
-* Mutiple dict as arguments '**': def cheeseshop2(kind, **keywords): print(kw, ":", keywords[kw])	; 
+		
+- Multiple arguments: def cheeseshop1(kind, *arguments):   call:  cheeseshop1("Limburger", "It's very runny, sir.","It's really very,   VERY runny, sir.")
+
+- Mutiple dict as arguments '**': def cheeseshop2(kind, **keywords): print(kw, ":", keywords[kw])	; 
         call: cheeseshop2("Limburger", shopkeeper="Michael Palin",client="John Cleese",sketch="Cheese Shop Sketch")
 ```
 ## List as stack
