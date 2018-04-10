@@ -155,7 +155,7 @@ queue.popleft()
 ```
 
 
-## packing/unpacking argumnets
+## Packing/Unpacking argumnets
 ```
 - '*', '**'
 
@@ -228,7 +228,7 @@ for filename in filenames:
  
 -Sin: np.sin(x)
  ```
- ## random array
+ ## Random array
  ```
 - np.random.random(10)  # Random [0,1)
       
@@ -260,7 +260,7 @@ for filename in filenames:
           
 -  print (np.std(v))   # prints std deviation that is sigma here 
 ```          
-## arrange	   
+## Arrange	   
 ```
 x = np.arange(10)  
        x[2:5]  # prints from index [2,5)
