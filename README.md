@@ -272,7 +272,7 @@ x = np.arange(10)
 	   x[0:-1] # access from first to last 
 ```     
 	   
-## array
+## Array
 ```
    a = np.array( [20,30,40,50] ) 
       multiplication: c = a**2
@@ -326,22 +326,25 @@ Solve for X:  AX=Y        x = np.linalg.solve(a, y)
 		
 ## StacK/Floor/Split
 ```
-VstacK C = np.vstack((A,B)) #Verticle stack
-Hstack: C = np.hstack((A,B)) #Horizantal stack 
+- VstacK C = np.vstack((A,B)) # Verticle stack
 
-Floor:a = np.floor(10*np.random.random((2,12)))
+- Hstack: C = np.hstack((A,B)) # Horizantal stack 
 
-Split:
-      x,y,z = np.hsplit(a,3)   # Split a into 3
-	  x,y,z = np.hsplit(a,(3,4))   # Split a after the third and the fourth column
-      x,y = np.vsplit(a,2) #Verucle split into 2 of equal size 
+- Floor:a = np.floor(10*np.random.random((2,12)))
+
+- Split:
+      - x,y,z = np.hsplit(a,3)   # Split a into 3
+      
+      - x,y,z = np.hsplit(a,(3,4))   # Split a after the third and the fourth column
+      
+      - x,y = np.vsplit(a,2) #Verucle split into 2 of equal size 
 ```
 	  
 ## Histogram
 ```
-# Plot simple histogram
 # Histograms shows the frequency of occurence of data in the particular interval
 # density histogram is defined so that the area of each rectangle equals the relative frequency of the corresponding class, and the area of the entire histogram equals 1.
+    -Simple histogram
 		import numpy as np
 		import matplotlib.pyplot as plt	  
 		sa = np.array( [1, 2, 3, 4, 5] )
@@ -351,25 +354,28 @@ Split:
 		plt.hist(data, bins=binedges)
 		plt.show()
 
-		np.diff(binedges) #command to show difference of intervals from binedges 
-		hist, _ = np.histogram(data, bins=binedges,density=True)	
-		             density : bool, optional
-									If ``False``, the result will contain the number of samples in
-									each bin. If ``True``, the result is the value of the
-									probability *density* function at the bin, normalized such that
-									the *integral* over the range is 1. Note that the sum of the
-									histogram values will not be equal to 1 unless bins of unity
-									width are chosen; it is not a probability *mass* function
-	    hist.sum() # total number of samples
+- np.diff(binedges) # command to show difference of intervals from binedges 
+
+- hist, _ = np.histogram(data, bins=binedges,density=True)	
+         density : bool, optional
+                If ``False``, the result will contain the number of samples in
+		each bin. If ``True``, the result is the value of the
+		probability *density* function at the bin, normalized such that
+		the *integral* over the range is 1. Note that the sum of the
+		histogram values will not be equal to 1 unless bins of unity
+		width are chosen; it is not a probability *mass* function
+- hist.sum() # total number of samples
 ```
 
 ## MLab 
 ```
-Matlab bridge that lets Matlab look like a normal python library. Plotting pdf	
-reference:  https://mathinsight.org/probability_density_function_idea 
-https://stats.stackexchange.com/questions/133369/the-total-area-underneath-a-probability-density-function-is-1-relative-to-wh   
+- Matlab bridge that lets Matlab look like a normal python library. Plotting pdf
+
+- reference:  https://mathinsight.org/probability_density_function_idea 
+- https://stats.stackexchange.com/questions/133369/the-total-area-underneath-a-probability-density-function-is-1-relative-to-wh   
+
 # in short area under pdf for one particular interval indicates the probability for vaues to be in that specified interval.  
-		Sample:
+     - Sample:
             import matplotlib.mlab as mlab   # for plotting pdf
 			plt.hist(v, normed=True, bins=bin_edges)
 			xmin, xmax = plt.xlim()  # xaxis mini and max values 
@@ -379,18 +385,15 @@ https://stats.stackexchange.com/questions/133369/the-total-area-underneath-a-pro
 			plt.plot(x, p, 'r', linewidth=2) #plot line in red clolor 
 			plt.show()	
 			
-		plt.xlim(0, 10000) #sets x axis 
+- plt.xlim(0, 10000) #sets x axis 
 ```
-```
-Sum:np.sum(isum) #sum	 
-```
-
 ## Sparse Matrix
 ```
 # matrix that has number of entries as zeroes is referred to as sparse 
 # Coordinate Format (COO)
-   data[i] is value at (row[i], col[i]) position
-   duplicates entries are summed together:
+
+   - data[i] is value at (row[i], col[i]) position
+   - duplicates entries are summed together:
 		import numpy as np
 		import scipy.sparse as sps           
 		row = np.array([0, 3, 1, 0])
@@ -399,16 +402,16 @@ Sum:np.sum(isum) #sum
 		mtx = sps.coo_matrix((data, (row, col)), shape=(4, 4))
 		mtx     
 		mtx.todense()
-		#output:matrix([[4, 0, 9, 0],[0, 7, 0, 0],[0, 0, 0, 0],[0, 0, 0, 5]])
+		# output:matrix([[4, 0, 9, 0],[0, 7, 0, 0],[0, 0, 0, 0],[0, 0, 0, 5]])
 
 # Compressed Sparse Row Format 
-    three NumPy arrays: indices, indptr, data
+    - Three NumPy arrays: indices, indptr, data
 		data = np.array([1, 2, 3, 4, 5, 6])
 		indices = np.array([0, 2, 2, 0, 1, 2])
 		indptr = np.array([0, 2, 3, 6])
 		mtx = sps.csr_matrix((data, indices, indptr), shape=(3, 3))
 		mtx.todense()	
-        #output: matrix([[1, 0, 2],[0, 0, 3],[4, 5, 6]])		
+        # output: matrix([[1, 0, 2],[0, 0, 3],[4, 5, 6]])		
 
 # Create RHS and solve A x = b for x:
 b = rand(1000)
@@ -420,21 +423,22 @@ err = norm(x-x_)
 # Usefull Tips
 
 ```
-cretaing list: squares = [x**2 for x in range(10)]
+- cretaing list: squares = [x**2 for x in range(10)]
                Ex2: [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
 			   
-apply one function to all elements in the list: [abs(x) for x in vec]	
+- apply one function to all elements in the list: [abs(x) for x in vec]	
 		   
-Zip: x = [1, 2, 3] y = [4, 5, 6] zipped = zip(x, y)	(object)	list(zipped) = [(1, 4), (2, 5), (3, 6)]	 
+- Zip: x = [1, 2, 3] y = [4, 5, 6] zipped = zip(x, y)	(object)	list(zipped) = [(1, 4), (2, 5), (3, 6)]	 
 
-List to set : set(list)  
-Set to list: List(set)
+- List to set : set(list)  
 
-string start with :  x.startswith('x')
+- Set to list: List(set)
 
-2 List--->List of tuples(zip())---> dict (dict())
+- String start with :  x.startswith('x')
 
-newaxis is used to increase the dimension 
+- 2 List--->List of tuples(zip())---> dict (dict())
+
+- newaxis is used to increase the dimension 
    xs = np.array([1, 2, 3, 4, 5])
       #xs.shape (5,)  1D
    xs[:, np.newaxis].shape 
@@ -444,73 +448,76 @@ newaxis is used to increase the dimension
    xs[:, np.newaxis, np.newaxis].shape
       #(5, 1, 1) 3D
 	  
-One use of Underscore:
-    [ np.random.randint(1, 6) for _ in range(10) ]  #prints list of random numbers in [1,6)
+- One use of Underscore:
+    [ np.random.randint(1, 6) for _ in range(10) ]  # prints list of random numbers in [1,6)
     https://stackoverflow.com/questions/5893163/what-is-the-purpose-of-the-single-underscore-variable-in-python
 	
-import matplotlib.mlab as mlab   # for plotting probability distribution function 
+- import matplotlib.mlab as mlab   # for plotting probability distribution function 
 
-Multiplication: 2*3
+- Multiplication: 2*3
 
-Power: 2**3 (2 cube)
+- Power: 2**3 (2 cube)
+
+- Sum:np.sum(isum) #sum	 
+
 
 ```
 
-# usefull pieces of code
+# Usefull pieces of code
  ```
 # print lines from a file  
 # with for file streams/unmanaged resources 
-import os
-dir = 'resources'
-filename = os.path.join(dir, 'test_house.csv')
-print(filename)
-with open(filename) as f:
-    for i, line in enumerate(f):
-        print(line,i)
-        if i > 1:
-            break
-f.close()
+		import os
+		dir = 'resources'
+		filename = os.path.join(dir, 'test_house.csv')
+		print(filename)
+		with open(filename) as f:
+		    for i, line in enumerate(f):
+			print(line,i)
+			if i > 1:
+			    break
+		f.close()
 
 # read from file
-    dir = 'resources'
-    filename = os.path.join(dir, 'ttest.csv')
-    try:
-        f = open(filename, 'r')
-        text = f.read()
-        print(text)
-        f.close()
-    except IOError:
-        sys.stderr.write('problem reading:' + filename)
-    print('After handling exception')
+	    dir = 'resources'
+	    filename = os.path.join(dir, 'ttest.csv')
+	    try:
+		f = open(filename, 'r')
+		text = f.read()
+		print(text)
+		f.close()
+	    except IOError:
+		sys.stderr.write('problem reading:' + filename)
+	    print('After handling exception')
 
 
 # sort dict by value
-tel = {'sape': 4139, 'guido': 4127, 'jack': 4098}
-sorted(tel.items(),key=lambda x: (x[1],x[0]))
+	tel = {'sape': 4139, 'guido': 4127, 'jack': 4098}
+	sorted(tel.items(),key=lambda x: (x[1],x[0]))
  
 # Boolean Mask
-C = np.array([123,188,190,99,77,88,100])
-A = np.array([4,7,2,8,6,9,5])
-R = C[A<=5]
-print(R) #output: [123 190 100]
+	C = np.array([123,188,190,99,77,88,100])
+	A = np.array([4,7,2,8,6,9,5])
+	R = C[A<=5]
+	print(R) #output: [123 190 100]
 
 
 # Boolean Indexing
-import numpy as np
-A = np.array([4, 7, 3, 4, 2, 8])
-print(A == 4)
-[ True False False  True False False]
+	import numpy as np
+	A = np.array([4, 7, 3, 4, 2, 8])
+	print(A == 4)
+	[ True False False  True False False]
 
 # function that is called with a parameter p, which is a probabilty value between 0 and 1. 
 # The function returns a 1 with a probability of p, and zeros with probability of (1-p).
-def prob(a):
-    x=np.random.random()
-    if x< a:
-        return 1
-    else:
-        return 0
-n=1000
-sum(prob(0.2) for _ in range(n))/n
+	def prob(a):
+	    x=np.random.random()
+	    if x< a:
+		return 1
+	    else:
+		return 0
+	n=1000
+	sum(prob(0.2) for _ in range(n))/n
 
 # dummy data generation 
 	1.data = [ np.random.choice(array) for _ in range(1000) ]
