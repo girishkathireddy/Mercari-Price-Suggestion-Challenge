@@ -50,7 +50,7 @@ tup1[0]:  12  #access tuple by index
 - def lastc(s): return s[-1] myList=[(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]   sorted(myList,key=lastc)
     * ref: https://developers.google.com/edu/python/sorting
     
-- def ask_ok(prompt, retries=4, reminder='Please try again!'):   can pass one argument,2 or all the argumnets: 
+- def ask_ok(prompt, retries=4, reminder='Please try again!'):  # can pass one argument,2 or all the argumnets: 
     - ask_ok('OK to overwrite the file?', 2) or 
     - ask_ok('Do you really want to quit?') or 
     - ask_ok('OK to overwrite the file?', 2, 'Come on, only yes or no!')
@@ -73,9 +73,11 @@ tup1[0]:  12  #access tuple by index
 ```
 ## List as stack
 ```
-stack = [3, 4, 5]
-stack.append(6)  #  [3,4,5,6]  like push
-stack.pop() # [3,4,5]  pops out 6 last added
+- stack = [3, 4, 5]
+
+- stack.append(6)  #  [3,4,5,6]  like push
+
+- stack.pop() # [3,4,5]  pops out 6 last added
 ```
 
 ## Queue
@@ -85,80 +87,103 @@ queue = deque(["Eric", "John", "Michael"])
 queue.popleft()  
 ```
 
-## For loop
+## For (loop)
 ```
-for i in range(5):
-for i in range(4,9,2):
-for i in A: # A is List then i refers to element in A not the index
-```
-```
-Multiplication: 2*3
-Power: 2**3 (2 cube)
-```
+- for i in range(5):
 
+- for i in range(4,9,2):
+
+- for i in A: # A is List then i refers to element in A not the index
+```
 ## Trim
 ```
-string.strip() # removes begining and ending spaces by default
-string.strips('0') # removes if character '0' is present at the beginning and end of string. Generally, strip([chars]):   all combinations of its chars are stripped from both ends.
+- string.strip() # removes begining and ending spaces by default
+
+- string.strips('0') # removes if character '0' is present at the beginning and end of string. Generally, strip([chars]):   all   combinations of its chars are stripped from both ends.
 ```
 
 ## SET
 ```
-{},
-unordered collection;
-no duplicate elements;
-create an empty set you have to use set(), not {};
-membership testing using 'in';
-Unique letters in set s1 = set('aab');
-set operations: '-','|','&','^'
+- {},
+
+- unordered collection;
+
+- no duplicate elements;
+
+- create an empty set you have to use set(), not {};
+
+- membership testing using 'in';
+
+- Unique letters in set s1 = set('aab');
+
+- set operations: '-','|','&','^'
 ```
 
 ## Dictionaries
 ```
-Unordered
-keys unique
-tel = {'sape': 4139, 'guido': 4127, 'jack': 4098}   ;tel.keys(),tel.values(),tel.items()
-dict to set of tuples: set(tel.items())
-access values: for k, v in tel.items():   print (k,v)
-access values: for key in tel: print( key, tel[key])
-delete : del tel['guido']
+- Unordered
+
+- keys unique
+
+- tel = {'sape': 4139, 'guido': 4127, 'jack': 4098}   ;tel.keys(),tel.values(),tel.items()
+
+- dict to set of tuples: set(tel.items())
+
+- access values: for k, v in tel.items():   print (k,v)
+
+- access values: for key in tel: print( key, tel[key])
+
+- delete : del tel['guido']
 ```
 
 
 ## Error
 ```
-ValueError('invalid user response')
-IOError:
-stderr: import sys ; sys.stderr.write('problem reading:' + filename)
+- ValueError('invalid user response')
+
+- IOError:
+   - stderr: import sys ; sys.stderr.write('problem reading:' + filename)
 ```
 
 ## Print
 ```
-defualt ends with newline
-print("Python" , end = '@')  : ends with @ and continues with  next print  
-print("-" * 40)
+- defualt ends with newline
+
+- print("Python" , end = '@')  : ends with @ and continues with  next print  
+
+- print("-" * 40)
 ```
 
 
 ## packing/unpacking argumnets
 ```
-'*', '**'
-t1 = [10, 20, 30]; 
-  print(t1)  # print list
-  print(*t1)  # print unpacked list
-a1 = [0, 1, 2, 3]; a2 = [4, 5, 6, 7]; print(*zip(a1,a2)) # unpack tuples 
+- '*', '**'
+
+- t1 = [10, 20, 30]; 
+  
+- print(t1)  # print list
+  
+- print(*t1)  # print unpacked list
+
+- a1 = [0, 1, 2, 3]; a2 = [4, 5, 6, 7]; print(*zip(a1,a2)) # unpack tuples 
 ```
 
 ## Lambda Functions
 ```
-g = lambda x: x**2  # a single expression defines for input x,  compute x**2
+- g = lambda x: x**2  # a single expression defines for input x,  compute x**2
   call:g(4)
-g = lambda x,y: x**2 + y**2
+  
+- g = lambda x,y: x**2 + y**2
   call:g(4,3)
-Filter:  filter():returns object
+
+- Filter:  filter():returns object
    list_a = [1, 2, 3, 4, 5, 6, 7, 8]  ; result = list(filter(lambda x: x%2 == 0, list_a ))
-Map: result = list(map(lambda x: x**2, list_a ))
-Reduce (output scalar value, can be used in place of for loop ):import functools    functools.reduce(lambda x,y: x+y, list_a)
+
+- Map: result = list(map(lambda x: x**2, list_a ))
+
+- Reduce (output scalar value, can be used in place of for loop )
+    import functools    
+    functools.reduce(lambda x,y: x+y, list_a)
  ```
  
 ## File
@@ -185,33 +210,55 @@ for filename in filenames:
  # Numpy
  ## Working with arrays #[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14]
 ``` 
- import numpy as np
- array: a = np.arange(15)  #[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14]
- access array: a[index]
- matrix: a = np.arange(15).reshape(3, 5) # 3*5
- zeros: np.zeros( (3,4) )
- ones: np.ones( (3,4), dtype=int )
- linspace: b=np.linspace( 0, 2, 9 ) # 9 members from 0 to 2
- PI: np.pi
- Sin: np.sin(x)
+- import numpy as np
+
+- array: a = np.arange(15)  #[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14]
+ 
+- access array: a[index]
+ 
+- matrix: a = np.arange(15).reshape(3, 5) # 3*5
+ 
+- zeros: np.zeros( (3,4) )
+ 
+- ones: np.ones( (3,4), dtype=int )
+ 
+-linspace: b=np.linspace( 0, 2, 9 ) # 9 members from 0 to 2
+ 
+-PI: np.pi
+ 
+-Sin: np.sin(x)
  ```
  ## random array
  ```
-       np.random.random(10)  #Random [0,1)
-       a =  np.random.rand(4,5)  # 2d 4*5  over unifom distribution [0, 1)
-       a0= a[:,4]   # Produces a array of one dimensional using 4th column
-	   a0 = a[0, :] # Produces a array of one dimensional using 0th row
-	   a[1:3,0:2] #  accessing rows and columns  [1,3), [0,2)
-	   np.random.randint(1,6) # retunrs random [1,6)
-	   np.random.randint(2, size=10) #array([1, 0, 0, 0, 1, 1, 0, 0, 1, 0])
-	   np.random.choice(sa)  #select random number from the array/list  sa 
-	   np.random.choice(sa,(2,3)) #random choice of shape 2*3
-	   np.random.choice(array, 5, p=[0.5, 0.1, 0.1, 0.3]) #selects by considering probabilities p 
- 	   rng = np.random.RandomState(10) # used to generate same sequence of random numbers just like np.random.seed(number)
-	      rng = np.random.RandomState(10)   print(rng.randint(10))  # it prints the same number 
-		  v = rng.normal(mu,sigma,1000)   # Normal generates random numbers(1000) with mean of mu and standard deviation of sigma .
-          print (np.mean(v))   # prints mean which is mu here 
-          print (np.std(v))   # prints std deviation that is sigma here 
+- np.random.random(10)  # Random [0,1)
+      
+- a =  np.random.rand(4,5)  # 2d 4*5  over unifom distribution [0, 1)
+      
+- a0= a[:,4]   # Produces a array of one dimensional using 4th column
+	  
+- a0 = a[0, :] # Produces a array of one dimensional using 0th row
+	  
+- a[1:3,0:2] #  accessing rows and columns  [1,3), [0,2)
+	  
+- np.random.randint(1,6) # retunrs random [1,6)
+
+- np.random.randint(2, size=10) #array([1, 0, 0, 0, 1, 1, 0, 0, 1, 0])
+
+- np.random.choice(sa)  #select random number from the array/list  sa 
+	  
+- np.random.choice(sa,(2,3)) #random choice of shape 2*3
+
+- np.random.choice(array, 5, p=[0.5, 0.1, 0.1, 0.3]) #selects by considering probabilities p 
+ 	  
+- rng = np.random.RandomState(10) # used to generate same sequence of random numbers just like np.random.seed(number)
+	      
+- rng = np.random.RandomState(10)   print(rng.randint(10))  # it prints the same number 
+		  
+-  v = rng.normal(mu,sigma,1000)   # Normal generates random numbers(1000) with mean of mu and standard deviation of sigma .
+         
+- print (np.mean(v))   # prints mean which is mu here 
+          
+-  print (np.std(v))   # prints std deviation that is sigma here 
 ```          
 ## arrange	   
 ```
@@ -398,6 +445,11 @@ One use of Underscore:
     https://stackoverflow.com/questions/5893163/what-is-the-purpose-of-the-single-underscore-variable-in-python
 	
 import matplotlib.mlab as mlab   # for plotting probability distribution function 
+
+Multiplication: 2*3
+
+Power: 2**3 (2 cube)
+
 ```
 
 # usefull pieces of code
