@@ -279,25 +279,29 @@ x = np.arange(10)
 	  c = a[a<40] #numbers less than 40 to c
 	  c = a < 35 #Relational [ True  True False False]
  ```
-## array operations
+## Array operations
 ```
-      A = np.array( [[1,1], [0,1]] )  # represents 2d array
-	  B = np.array( [[2,0], [3,4]] )   
-	        C = A * B    #output [[2 0] [0 4]]
-			C = A.dot(B) # Matrix multiplication
-			C = np.dot(A, B) # Matrix multiplication using numpy
-			MA = np.mat(A) # MA represents Mattrix
-	  A = np.array([ [11, 12, 13], [21, 22, 23], [31, 32, 33] ])
-	  B = np.array([1, 2, 3])
-	        print(A+B) # output = [[12 14 16] [22 24 26] [32 34 36]]
-	  B = np.array([[1, 2, 3],] * 3) #output 3*3 array [[1 2 3] [1 2 3] [1 2 3]]
-	  np.array([[1, 2, 3],] * 3).transpose() #Transpose of array
-	  access multiple values by indices: C[[0, 2, 3, 1, 4, 1]]
+ - A = np.array( [[1,1], [0,1]] )  # represents 2d array
+   B = np.array( [[2,0], [3,4]] )   
+         C = A * B        # output [[2 0] [0 4]]
+         C = A.dot(B)     # Matrix multiplication
+         C = np.dot(A, B) # Matrix multiplication using numpy
+         MA = np.mat(A)   # MA represents Mattrix
+			
+-  A = np.array([ [11, 12, 13], [21, 22, 23], [31, 32, 33] ])
+      B = np.array([1, 2, 3])
+      print(A+B) # output = [[12 14 16] [22 24 26] [32 34 36]]
+	  
+- B = np.array([[1, 2, 3],] * 3) # output 3*3 array [[1 2 3] [1 2 3] [1 2 3]]
+	 
+- np.array([[1, 2, 3],] * 3).transpose() #Transpose of array
+	  
+- access multiple values by indices: C[[0, 2, 3, 1, 4, 1]]
    ```
 	  
 ## Broadcast
 ```
- * The smaller array is “broadcast” across the larger array so that they have compatible shapes
+ - The smaller array is “broadcast” across the larger array so that they have compatible shapes
  broadcasting describes how numpy treats arrays with different shapes during arithmetic operation
       A = np.array([ [11, 12, 13], [21, 22, 23], [31, 32, 33] ])
   	  B = np.array([1, 2, 3])
@@ -307,12 +311,12 @@ x = np.arange(10)
 ```
     A = np.array([ [11, 12, 13], [21, 22, 23], [31, 32, 33] ]) 
     B = np.tile(np.array([1, 2, 3]), (3, 1))
-    print(B)    #[[1 2 3][1 2 3][1 2 3]]   # in (3,1) 3 is number of copies, 1 indicates array is not repeated. 2 (place of 1)indicates 
+    print(B)    # [[1 2 3][1 2 3][1 2 3]]   # in (3,1) 3 is number of copies, 1 indicates array is not repeated. 2 (place of 1)indicates 
  ```   
-## array repeated twice 
+## Array repeated twice 
 ```
-    print(A+B)  #[[12 14 16][22 24 26][32 34 36]]   Direct addition
-    print(A*B)  #[[11 24 39][21 44 69] [31 64 99]] Direct multiplication
+    - print(A+B)  #[[12 14 16][22 24 26][32 34 36]]   Direct addition
+    - print(A*B)  #[[11 24 39][21 44 69] [31 64 99]]  Direct multiplication
 ```   
 ## Linear algebra
 ```
