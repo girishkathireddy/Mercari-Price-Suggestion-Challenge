@@ -26,3 +26,9 @@ Jupyter Notebook using Anaconda
    * K - Nearest Neighbours 
    * K - Means
    * Random Forest Regression  
+
+## Image 
+![alt text](images/image-1.PNG)
+
+## Image 
+![alt text](images/image-2.PNG)
