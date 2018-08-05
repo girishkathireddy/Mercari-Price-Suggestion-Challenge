@@ -1,5 +1,5 @@
 # Mercari Price Suggestion Challenge
-<p>In this project, we tried to provide the best algorithm that automatically suggests the right product prices for shopping app from user-inputted text descriptions of the product, category name, brand name, and item condition</p>
+<p>In this project, we tried to provide the best algorithm that automatically suggests the right product prices for shopping app from product name, user-inputted text descriptions of the product, category name, brand name, item condition, and shipping information </p>
 
 Cheat sheet for reference :  https://github.com/girishkathireddy/Python/wiki
 
